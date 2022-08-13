@@ -1,0 +1,45 @@
+{
+  "name": "copilot",
+  "description": "A lightweight javascript NPM package written in typescript to be companion for the Node applications",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "lint": "npx eslint src --fix",
+    "format": "npx prettier --write src",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iam-hussain/copilot.git"
+  },
+  "author": "iam-hussain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iam-hussain/copilot/issues"
+  },
+  "homepage": "https://github.com/iam-hussain/copilot#readme",
+  "devDependencies": {
+    "@types/node": "^18.7.2",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
