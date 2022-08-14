@@ -13,3 +13,9 @@ export type ObjectOfArray = {
 export type ObjectOfObject = {
   [key: string]: ObjectOfObject;
 };
+
+export interface Formatter {
+  level: string;
+  message: any;
+  [key: string]: any;
+}
